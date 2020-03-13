@@ -1,22 +1,33 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import CartNavigation from "./CartNavigation/CartNavigation";
 
-const Header = ({ siteTitle }) => (
+const Header = ({ props, siteTitle, siteLogo }) => (
+  
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `transparent`,
+      //marginBottom: `1.45rem`,
+      position: `fixed`,
+      width: `100%`,
+      top: `0`,
+      left: `0`,
+      zIndex: `11`,
+      display: 'flex',
+      padding: `1.45rem 1.0875rem`,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: '100%',
+        
       }}
     >
-      <h1 style={{ margin: 0 }}>
+
         <Link
           to="/"
           style={{
@@ -24,19 +35,33 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <img
+            style={{ maxWidth: `80px` }}
+            src={siteLogo} />
         </Link>
-      </h1>
+
     </div>
+    <CartNavigation />
   </header>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  siteLogo: PropTypes.string
 }
 
 Header.defaultProps = {
   siteTitle: ``,
+  siteLogo:``,
 }
 
 export default Header
+
+
+// export const query = graphql`
+// query HeaderQuery {
+//   header: datoCmsHomePage {
+//     logoSmall {
+//       url
+//     }
+// }}`

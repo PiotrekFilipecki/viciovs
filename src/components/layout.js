@@ -11,8 +11,15 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import "animate.css/animate.min.css";
+
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
 const Layout = ({ children }) => {
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,24 +27,30 @@ const Layout = ({ children }) => {
           title
         }
       }
+      datoCmsHomePage {
+        logoSmall {
+          url
+        }
+      }
     }
   `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteLogo={data.datoCmsHomePage.logoSmall.url} siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          maxWidth: '100%',
+          //padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          <img src={data.datoCmsHomePage.logoSmall.url} />
+          © {new Date().getFullYear()}, VICIOVS
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          
         </footer>
       </div>
     </>

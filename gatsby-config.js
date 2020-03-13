@@ -1,10 +1,15 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Gatsby e-Commerce Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,8 +32,21 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+      {
+        resolve: `gatsby-source-datocms`,
+        options: {
+          apiToken: `38bb65310de2f9f863521ad5f733e3`,
+          preview: false,
+          disableLiveReload: false,
+        },
+      },
+      {
+        resolve: 'gatsby-plugin-snipcart',
+        options: {
+          apiKey: 'ODA4NGY1OWYtZDU5Yi00YWVjLWFjNWYtNzNlMjY0ZTE2ODFlNjM3MTg1MDAxMTc2MjI5MjQ4',
+          autopop: true
+        }
+      },
+      
   ],
 }

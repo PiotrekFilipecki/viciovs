@@ -7,6 +7,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 article,
 aside,
@@ -619,4 +620,83 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+.home {
+  position: relative;
+  width: 100%;
+  /*overflow: hidden;*/
+}
+
+
+.snipcart-checkout {
+  font-family: 'Muli', sans-serif;
+  font-size: 0.8rem;
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+}
+
+.snipcart-checkout::before {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: '';
+  position: absolute;
+  transition: transform .5s ease;
+  transform: scaleX(0);
+}
+
+.snipcart-checkout:hover::before {
+  transform: scaleX(1);
+}
+
+.socialLinks-wrapper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  margin: 4em auto 0;
+  justify-content: space-between;
+}
+
+.socialLinks-wrapper a {
+  display: block;
+}
+
+.socialLinks-wrapper img {
+  width: 100%;
+  max-width: 50px;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.socialLinks-wrapper img:hover {
+  transform: scale(0.9);
+}
+
+footer {
+  font-family: 'Muli', sans-serif;
+  width: 100%;
+  padding: 4em 2em;
+  background: #000;
+  color: #fff;
+  font-size: 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer img {
+  max-width: 80px;
+}
+
+.adjustDiv {
+  width: 100vw;
+  height: 100%;
 }

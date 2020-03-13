@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700&display=swap');
+
+.homeProducts {
+    font-family: 'Archivo Narrow', sans-serif;
+    display: flex;
+    padding: 10% 20%;
+    justify-content: space-evenly;
+    
+}
+
+.homeProduct {
+    padding: 0.5vw;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1);
+    border-radius: 0px;
+    background: transparent;
+    box-shadow: 0;
+}
+
+.homeProduct:hover {
+    transform: scale(0.95);
+    /* background: linear-gradient(145deg, #e6e6dd, #ffffff);
+    box-shadow:  18px 18px 36px #d9d9d1, 
+             -18px -18px 36px #ffffff; */
+}
+
+.productName span {
+    font-weight: 700;
+}
+
+@media screen and (max-width:1024px) {
+    .homeProducts {
+        justify-content: center; 
+        flex-wrap: wrap;  
+    }
+
+    .homeProduct {
+        margin-bottom: 2em;
+    }
+}
