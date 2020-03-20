@@ -1,0 +1,35 @@
+.ScrollButton {
+    opacity: 0.5;
+    background-color: #000000;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    outline: 0;
+    z-index: 12;
+}
+
+.ScrollButton:hover {
+    opacity: 1;
+}
+
+.ScrollButton img {
+    max-width: 30px;
+}
+
+.ScrollButtonWrapper {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: 12;
+}
+
+.ScrollButtonWrapper[data-active='true'] {
+    opacity: 1;
+}

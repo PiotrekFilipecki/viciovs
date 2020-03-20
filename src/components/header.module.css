@@ -1,0 +1,31 @@
+.header {
+    background: rgba(255,255,255,0);
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 18;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.header[data-active='true'] {
+    /* box-shadow: 0 2px 8px rgba(152,168,188,.2); */
+    background: rgba(0,0,0,1);
+    height: 50px;
+  }
+
+.header img {
+    max-width: 80px;
+    width: 100%;
+    align-self: center;
+    margin-left: 1.5em;
+    transition: all .3s ease;
+}
+
+.header[data-active='true'] img {
+    max-width: 60px;
+}

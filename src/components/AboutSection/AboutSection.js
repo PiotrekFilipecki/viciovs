@@ -11,14 +11,14 @@ const AboutSection = (props) => {
             <ScrollAnimation animateIn="fadeIn">
                 <p>{props.content}</p>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn" delay="1">
+            <ScrollAnimation animateIn="fadeIn" delay={1}>
                 <div className={aboutSectionStyles.upperContent}>
                     <img src={props.coverSrc} />
-                    <iframe src={props.youtubeVideoSrc}></iframe>
+                    <iframe rel='nofollow' src={props.youtubeVideoSrc}></iframe>
                 </div>
             </ScrollAnimation>
                 {/* <iframe src={props.vimeoVideoSrc}></iframe>  */}
-            <ScrollAnimation animateIn="fadeIn" delay="2">
+            <ScrollAnimation animateIn="fadeIn" delay={2}>
                  <div className={aboutSectionStyles.vimeoWrapper}>
                     <iframe className={aboutSectionStyles.iframe} src={props.vimeoVideoSrc}  frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
                 </div>

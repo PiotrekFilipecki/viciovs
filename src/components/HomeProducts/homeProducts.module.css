@@ -3,7 +3,9 @@
 .homeProducts {
     font-family: 'Archivo Narrow', sans-serif;
     display: flex;
-    padding: 10% 20%;
+    padding: 10% 0;
+    width: 80%;
+    margin: 0 auto;
     justify-content: space-evenly;
     
 }
@@ -16,6 +18,11 @@
     background: transparent;
     box-shadow: 0;
 }
+
+.homeProduct img {
+    width: 100%;
+}
+
 
 .homeProduct:hover {
     transform: scale(0.95);
@@ -37,4 +44,24 @@
     .homeProduct {
         margin-bottom: 2em;
     }
+}
+
+.snipcart-overwrite #snipcart-main-container span.snipcart-unit-price,  
+.snipcart-overwrite #snipcart-main-container span.snipcart-total-price, 
+.snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-product-name, 
+.snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-shipping-method-name, 
+.snipcart-overwrite  #snipcart-main-container table.snipcart-list span.snipcart-shipping-method-price, 
+.snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-confirm-item-quantity, 
+.snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-confirm-item-price, 
+.snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-confirm-item-total-price, 
+.snipcart-overwrite #snipcart-main-container label, .snipcart-overwrite ul#snipcart-steps li span.snipcart-step-text, 
+.snipcart-overwrite #snipcart-main-container table.snipcart-list th, .snipcart-overwrite #snipcart-main-content .snipcart-column span.snipcart-title, 
+.snipcart-overwrite table#snipcart-confirm-prices tr td span, .snipcart-overwrite #snipcart-main-container .snipcart-full-width-text span.snipcart-title, 
+.snipcart-overwrite #snipcart-main-container .snipcart-full-width-text, .snipcart-overwrite #snipcart-step-content-emptycart .snipcart-full-width-text p, 
+.snipcart-overwrite #snipcart-blocked .snipcart-full-width-text p, .snipcart-overwrite #snipcart-header #snipcart-total span, .snipcart-overwrite #snipcart-header #snipcart-title  {
+    font-family: 'Archivo Narrow', sans-serif !important;
+}
+
+.snip-layout {
+    font-family: 'Archivo Narrow', sans-serif !important;
 }

@@ -39,7 +39,7 @@ render={data => (
       {
         data.products.edges.map(({ node: product, index }) => (
           
-          <ScrollAnimation key={product.id} animateIn="fadeIn" delay="1">
+          <ScrollAnimation key={product.id} animateIn="fadeIn" delay={1}>
           
           {console.log('auuu', data.products.edges)}
           <div className={homeProductsStyles.homeProduct} key={product.id}>

@@ -1,49 +1,54 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import CartNavigation from "./CartNavigation/CartNavigation";
+import headerStyles from './header.module.css'
 
-const Header = ({ props, siteTitle, siteLogo }) => (
-  
-  <header
-    style={{
-      background: `transparent`,
-      //marginBottom: `1.45rem`,
-      position: `fixed`,
-      width: `100%`,
-      top: `0`,
-      left: `0`,
-      zIndex: `11`,
-      display: 'flex',
-      padding: `1.45rem 1.0875rem`,
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      
-    }}
-  >
-    <div
-      style={{
-        maxWidth: '100%',
-        
-      }}
+const Header = ({ props, siteTitle, siteLogo }) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(!scrolled)
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true});
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+  return (
+    <header
+      className={headerStyles.header}
+      data-active={scrolled}
     >
-
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          <img
-            style={{ maxWidth: `80px` }}
-            src={siteLogo} />
-        </Link>
-
-    </div>
-    <CartNavigation />
-  </header>
-)
+      <div
+        style={{
+          maxWidth: '100%',
+          
+        }}
+      >
+  
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            <img
+              src={siteLogo} />
+          </Link>
+  
+      </div>
+      <CartNavigation />
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

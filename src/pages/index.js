@@ -9,7 +9,7 @@ import HomeProducts from "../components/HomeProducts/HomeProducts";
 import AboutSection from "../components/AboutSection/AboutSection";
 import ContactSection from "../components/ContactSection/ContactSection";
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import contactStyles from "../components/contactStyles.module.css"
 
 // const showLinksList = ({data: {home}},socialLinks) => {
 //   socialLinks = home.socialLinks
@@ -37,11 +37,11 @@ const IndexPage = ({data: {home}}, socialLinks) => (
       vimeoVideoSrc={home.vimeoUrl} 
     />
     <ContactSection id="contact" >
-      <ScrollAnimation animateIn="fadeIn" delay="1">
+      <ScrollAnimation animateIn="fadeIn" delay={1}>
         <p>{home.contactParagraph}</p>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeIn" delay="2">
-        <div className="socialLinks-wrapper">
+        <ScrollAnimation animateIn="fadeIn" delay={2}>
+        <div className={contactStyles.socialLinksWrapper}>
           {  
             home.socialLinks.map((socialLink) => (
               <a key={socialLink.id} href={socialLink.linkTitle}>

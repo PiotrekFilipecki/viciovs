@@ -1,0 +1,33 @@
+.socialLinksWrapper {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    margin: 4em auto 0;
+    justify-content: space-between;
+  }
+  
+  .socialLinksWrapper a {
+    display: block;
+  }
+  
+  .socialLinksWrapper img {
+    width: 100%;
+    max-width: 50px;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+  }
+  
+  .socialLinksWrapper img:hover {
+    transform: scale(0.9);
+  }
+
+  @media screen and (max-width: 680px) {
+    .socialLinksWrapper {
+      margin: 8em auto 0;
+      width: 80%;
+    }
+
+    .socialLinksWrapper img {
+      max-width: 35px;
+    }
+  }

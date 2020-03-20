@@ -630,7 +630,7 @@ pre tt:after {
 }
 
 
-.snipcart-checkout {
+/* .snipcart-checkout {
   font-family: 'Muli', sans-serif;
   font-size: 0.8rem;
   color: #ffffff;
@@ -654,7 +654,7 @@ pre tt:after {
 
 .snipcart-checkout:hover::before {
   transform: scaleX(1);
-}
+} */
 
 .socialLinks-wrapper {
   width: 100%;

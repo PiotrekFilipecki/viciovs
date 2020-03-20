@@ -32,7 +32,7 @@ animation: AnimationName 10s ease infinite;
 .PublishingInner {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     /* align-items: center; */
 }
@@ -41,14 +41,22 @@ animation: AnimationName 10s ease infinite;
 
 .PublishingInner p {
     text-align: justify;
-    padding: 2em 15rem 6em;
+    padding: 2em 4rem 4em;
+    font-size: 1.5vw;
 }
 
 .PublishingInner .upperContent {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 5em 4em;
+    padding: 0 2em 4em;
+}
+
+.PublishingInner .upperContent iframe {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
 }
 
 .PublishingInner iframe {
@@ -59,6 +67,8 @@ animation: AnimationName 10s ease infinite;
 .vimeoWrapper {
     position: relative;
     padding:56.25% 0 0 0;
+    width: 80%;
+    margin: 0 auto;
 
 }
 
@@ -68,6 +78,41 @@ animation: AnimationName 10s ease infinite;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .PublishingInner p {
+        font-size: 3vw;
+        padding: 2em 0rem 4em;
+    }
+}
+    
+
+@media screen and (max-width:1024px) {
+    .PublishingInner p {
+        font-size: 2vw;
+        padding: 2em 0rem 4em;
+    }
+
+    .PublishingInner .upperContent {
+        flex-direction: column;
+    }
+
+    .PublishingInner .upperContent img {
+        margin-bottom: 3em;
+    }
+
+
+
+
+}
+
+@media screen and (max-width:1200px) {
+    .PublishingInner .upperContent {
+        justify-content: space-between;
+
+    }
 }
 
 
